@@ -1,0 +1,22 @@
+<html>
+        <script type="text/javascript">
+            var preloadImage = function (path) {
+  return new Promise(function (resolve, reject) {
+    var image = new Image();
+    image.onload  = resolve;
+    image.onerror = reject;
+    image.src = path;
+  });
+};
+
+
+preloadImage('http://www.cszfp.net/upload/201607/13/201607131615092420.png')
+  .then(function (e) { document.body.append(e.target) })
+  .then(function () { console.log('加载成功') })
+
+        </script>
+<body>
+
+
+</body>
+</html>
