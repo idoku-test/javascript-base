@@ -1,14 +1,78 @@
+<!DOCTYPE html>
 <html>
 <body>
-<h1>我的第一个标题</h1>
-<div id="p1">我的第一个段落。</p>
+<base href="http://www.idoku.cn">
+<h1 id="h1">我的第一个标题</h1>
+<div id="p0"><div id="p1">我的第一个段落。</div><div id="p2">我的第二个段落。</div>
+</div>
+
 </body>
 <script type="text/javascript">
-    // var p = document.getElementById("p1");
+
+function DOMComb(parent, callback) {
+  if (parent.hasChildNodes()) {
+    for (var node = parent.firstChild; node; node = node.nextSibling) {
+      DOMComb(node, callback);
+    }
+  }
+  callback(parent);
+}
+var p0 = document.getElementById("p0")
+// 用法
+DOMComb(p0, console.log)
+
+
+
+// var p0 = document.getElementById("p0");
+// console.log(p0.childNodes)
+// if(p0.hasChildNodes()){
+//   p0.removeChild(p0.childNodes[0])
+// }
+// var p1 = document.getElementById("p1");
+// document.body.appendChild(p1);
+// var p = document.createElement('p')
+// p.innerText = "我的第三个节点";
+// document.body.appendChild(p);
+
+// var p0 = document.getElementById("p0");
+// console.log(p0.isConnected)
+// var p1 = document.createElement('p');
+// console.log(p1.isConnected) // false
+// document.body.appendChild(p1);
+// console.log(p1.isConnected) // true
+    // var children = document.childNodes;   
+    // for(var i = 0;i<children.length ;i++){
+    //     console.log(children[i].nodeType)
+    // }
+    //var p0 = document.getElementById("p0");
+    //console.log(p0.childNodes)
+    //console.log(p0.firstChild)
+
+    // var p1 =  document.getElementById("p1");
+    // if(p1.parentElement)
+    // {
+    //     p1.parentElement.style.color = 'red'
+    // }
+    // if(p1.parentNode){
+    //     p1.parentNode.removeChild(p1);
+    // }
+
+    // var h1 = document.getElementById("h1");
+    // while(h1 != null){
+    //     console.log(h1.nodeName);
+    //     h1 = h1.nextSibling
+    // }
+
+    // var p1 = document.getElementById("p1");
+    // var p2 = document.getElementById("p2");
+    
+    //console.log(p.ownerDocument)
+    // console.log(p1.nextSibling)
+    // console.log(p1.nextSibling===p2)
     // console.log(p.nodeValue);
     // console.log(p.firstChild.nodeValue)
-    document.getElementById('p1').textContent = '<p>GoodBye!</p>';
+    //document.getElementById('p1').textContent = '<p>GoodBye!</p>';
     //console.log(document.documentElement.textContent)
-    console.log(document.baseURI)
+    //console.log(document.baseURI)
 </script>
 </html>
