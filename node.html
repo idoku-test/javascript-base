@@ -3,23 +3,108 @@
 <body>
 <base href="http://www.idoku.cn">
 <h1 id="h1">我的第一个标题</h1>
-<div id="p0"><div id="p1">我的第一个段落。</div><div id="p2">我的第二个段落。</div>
+<div id="p0"><div id="p1"><span id="s1">我的第一个段落。</span></div><div id="p2">我的第二个段落。</div><div id="p3">我的第三个段落。</div>
+
+<div id="d1">
+
+  <!-- <div>第一个节点  </div>
+
+  <div>第一个节点  </div> -->
+
+</div>
+
+<div id="d2">
+    第一个文本
+    第二个文本
+</div>
+<div id="d3"></div>
+
 </div>
 
 </body>
 <script type="text/javascript">
 
-function DOMComb(parent, callback) {
-  if (parent.hasChildNodes()) {
-    for (var node = parent.firstChild; node; node = node.nextSibling) {
-      DOMComb(node, callback);
-    }
-  }
-  callback(parent);
-}
-var p0 = document.getElementById("p0")
-// 用法
-DOMComb(p0, console.log)
+console.log(document.body.firstChild.getRootNode() === document)
+console.log(document.body.firstChild.getRootNode() === document.body.firstChild.ownerDocument)
+console.log(document.getRootNode()) // document
+console.log(document.ownerDocument) // null
+
+// var d2 = document.getElementById("d2")
+// console.log(d2)
+// console.log(d2.childNodes.length);
+// d2.normalize();
+// console.log(d2.childNodes.length);
+// var d3 = document.getElementById("d3")
+// d3.appendChild(document.createTextNode('第一个文本 '));
+// d3.appendChild(document.createTextNode('第二个文本 '));
+// console.log(d3)
+// console.log(d3.childNodes.length);
+// d3.normalize();
+// console.log(d3.childNodes.length);
+
+// var d1 = document.getElementById("d1")
+// var c1 = d1.childNodes;
+// console.log(c1[0])
+// console.log(c1[1])
+// console.log(c1[0].isSameNode(c1[1]))
+
+
+
+
+// var head = document.head;
+// var body = document.body;
+// if (head.compareDocumentPosition(body) & 4) {
+//   console.log('文档结构正确');
+// } else {
+//   console.log('<body> 不能在 <head> 前面');
+// }
+
+// var p0 = document.getElementById("p0")
+// var p1 = document.getElementById("p1")
+// var s1 = document.getElementById("s1");
+
+// console.log(p0.compareDocumentPosition(p0))
+// console.log(p0.compareDocumentPosition(p1))
+// console.log(p0.compareDocumentPosition(s1))
+// console.log(s1.compareDocumentPosition(p0))
+
+// console.log(p0.contains(p0))
+// console.log(p0.contains(p1))
+// console.log(p0.contains(s1))
+
+// var p3 = document.getElementById("p3");
+// var p1 = document.getElementById("p1");
+// p3.parentNode.replaceChild(p3,p1)
+
+// var div = document.getElementById("p0");
+// while(div.firstChild)
+//   div.removeChild(div.firstChild);
+
+// var div = document.getElementById("p1");
+// div.parentNode.removeChild(div);
+
+//var parentNode = document.getElementById('p0');
+//var newNode = document.getElementById('p1').cloneNode(true);
+//var refenenceNode = document.getElementById('p2');
+//var insertedNode = parentNode.insertBefore(newNode,refenenceNode);
+//var insertedNode = parentNode.insertBefore(newNode,refenenceNode.nextSibling);
+
+
+// var cloneUL = document.querySelector("h1").cloneNode(true);
+// console.log(cloneUL);
+// document.body.appendChild(cloneUL)
+
+// function DOMComb(parent, callback) {
+//   if (parent.hasChildNodes()) {
+//     for (var node = parent.firstChild; node; node = node.nextSibling) {
+//       DOMComb(node, callback);
+//     }
+//   }
+//   callback(parent);
+// }
+// var p0 = document.getElementById("p0")
+// // 用法
+// DOMComb(p0, console.log)
 
 
 
