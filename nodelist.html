@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1 id="h1">我的第一个标题</h1>
+    <a href="www.baidu.com">baidu</a>
+    <a href="www.bing.com">bing</a>
+    <div id="p0">
+        <div id="p1">
+            <span id="s1">我的第一个段落。</span>
+        </div>
+        <div id="p2">我的第二个段落。
+        </div>
+        <div id="p3">我的第三个段落。
+        </div>
+        <img id="pic" src="2.jpg" width="160" height="180">
+</body>
+
+<script type="text/javascript">
+
+
+var pic = document.getElementById('pic');
+console.log(document.images.namedItem('pic') === pic) // true
+
+
+//   var l = document.links;
+//   console.log(l.item(1))
+    // console.log(document.links.length)
+    // console.log(document.links)
+    // console.log(document.body.childNodes.length)
+    // console.log(document.body.childNodes)
+
+
+// console.log(document.links instanceof HTMLCollection)
+
+// var pic = document.getElementById('pic');
+// console.log(document.images.pic === pic) // true
+
+
+// var children = document.getElementById('p0').childNodes;
+
+// for(var key of children.keys()){
+//     console.log(key)
+// }
+// console.log("---------------")
+// for(var value of children.values()){
+//     console.log(value)
+// }
+// console.log("---------------")
+// for(var entry of children.entries()){
+//     console.log(entry)
+// }
+
+// console.log(children[2])
+// console.log(children[10])
+
+// console.log(children.item(2))
+// console.log(children.item(10))
+//console.log(children.length)
+// children.forEach(function f(item,i,list){
+//     console.log(item)
+// },this)
+
+
+
+// var children = document.body.childNodes;
+// console.log(children instanceof NodeList)
+// console.log(Array.isArray(children))
+// console.log(children.length)
+// var arr = Array.prototype.slice.call(children)
+// console.log(Array.isArray(arr))
+</script>
