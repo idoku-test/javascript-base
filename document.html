@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>Title of the document</title> 
+                <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8">
+        </head>
+        
+<body>
+        <!-- <base href="http://www.idoku.cn"> -->
+        <div>1</div>
+        <p >一个段落</p>
+        <a href="http://www.baidu.com">baidu</a>
+        <a href="http://www.bing.com">bing</a>
+        <img id="pic1" src="1.png" width="60" height="80">
+        <img id="pic2" src="2.jpg" width="60" height="80">
+
+        <form id="f1" name="fn1"> 
+        <input type="text" id="input1" onclick="getact()" >
+        <input type="button" id="btnAct"  onclick="getact()"  value="当前焦点" >
+
+        <input type="button" id="btnTop" onclick="gotop()" value="返回顶部" />
+        </form>
+        <input type="button" id="btnFull" onclick="fullscreen()" value="全屏" />
+        <!-- <input type="button" id="btnPrint" onclick="print()" value="打印" /> -->
+<script type="text/javascript">
+    console.log(document.dir) 
+    document.dir = "rtl"
+    console.log(document.dir) 
+    
+
+    //console.log(document.referrer)
+
+    // console.log(document.title)
+    // document.title = "change title"
+    // console.log(document.title)
+    // console.log(document.baseURI)
+    // console.log(document.domain)
+
+    // console.log(document.lastModified) 
+    // var lastVisitedDate = Date.parse('11/19/2019 00:34:00')
+    // console.log(Date.parse('11/18/2019 00:34:00'))
+    // console.log(Date.parse(document.lastModified))    
+    // if(Date.parse(document.lastModified) > lastVisitedDate){
+    //     console.log('网页已经变更');
+    // }
+    // console.log(Object.prototype.toString.call(document.links))
+    // console.log(Object.prototype.toString.call(document.styleSheets))
+    // console.log(document.images.pic1)
+
+    
+    // var scripts = document.scripts;
+    // for(var i = 0 ;i<scripts.length;i++){
+    //     console.log(scripts[i])
+    // }
+
+    // var imgList = document.images
+    // for(var i = 0;i<imgList.length;i++){
+    //     console.log(imgList[i]);
+    // }
+
+    // var forms = document.forms;
+    // for(var i = 0;i<forms.length;i++){
+    //     console.log(forms[i])
+    // }
+    // console.log(document.forms[0] === document.forms.f1)
+    // console.log(document.forms.f1 === document.forms.fn1)
+    // var links = document.links;
+    // for(var i = 0;i<links.length;i++){
+    //     console.log(links[i])
+    // }
+    // // console.log(document.defaultView === window)
+    // var docttype = document.doctype;
+    // console.log(docttype)
+    // console.log(docttype.name)
+    
+    // console.log(document.documentElement)
+    // console.log(document.body)
+    // console.log(document.head)
+    function gotop(){
+        document.scrollingElement.scrollTop = 0;
+    }
+
+    function getact(){
+        var input = document.getElementById("input1");
+        console.log(document.activeElement)
+    }
+
+    function fullscreen(){
+        var el = document.documentElement
+        el.requestFullscreen();
+        setTimeout(()=>{
+            console.log(document.fullscreenElement)
+        },1000) 
+    }
+
+    // function print(){
+    //     console.log(document.fullscreenElement)
+    // }
+
+ 
+    
+</script>
+</body>
+
+</html>
+
+
+
