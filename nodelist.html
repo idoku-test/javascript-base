@@ -14,13 +14,41 @@
         <div id="p3">我的第三个段落。
         </div>
         <img id="pic" src="2.jpg" width="160" height="180">
+    </div>
+    <iframe src="node.html" frameborder="0"></iframe>
 </body>
 
 <script type="text/javascript">
 
 
-var pic = document.getElementById('pic');
-console.log(document.images.namedItem('pic') === pic) // true
+var p1 = document.getElementById('p1')
+var p2 = document.getElementById('p2')
+p1.replaceWith(p2)
+
+//console.log(document.firstElementChild.nodeName)
+//console.log(document.lastElementChild.nodeName)
+//console.log(document.body.childElementCount)
+// var parent = document.body
+// var p  = document.createElement('p')
+// parent.append(p)
+// parent.append('hello')
+
+
+
+
+// var nodes = document.getElementById('p0').childNodes;
+// console.log(nodes.length)
+// var d = document.getElementById("p0");
+// console.log(d.children.length);
+
+// for(var i = 0;i<d.children.length;i++){
+//     console.log(d.children[i])
+// }
+
+
+
+// var pic = document.getElementById('pic');
+// console.log(document.images.namedItem('pic') === pic) // true
 
 
 //   var l = document.links;
@@ -37,7 +65,7 @@ console.log(document.images.namedItem('pic') === pic) // true
 // console.log(document.images.pic === pic) // true
 
 
-// var children = document.getElementById('p0').childNodes;
+ //var children = document.getElementById('p0').childNodes;
 
 // for(var key of children.keys()){
 //     console.log(key)
