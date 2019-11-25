@@ -5,12 +5,15 @@
                 <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8">
         </head>
         
-<body>
+<body >
         <!-- <base href="http://www.idoku.cn"> -->
         <div>1</div>
         <p >一个段落</p>
         <a href="http://www.baidu.com">baidu</a>
         <a href="http://www.bing.com">bing</a>
+        <script type="text/javascript">
+            document.write("<p>hello world</p>")
+          </script>
         <img id="pic1" src="1.png" width="60" height="80">
         <img id="pic2" src="2.jpg" width="60" height="80">
 
@@ -21,12 +24,76 @@
         <input type="button" id="btnTop" onclick="gotop()" value="返回顶部" />
         </form>
         <input type="button" id="btnFull" onclick="fullscreen()" value="全屏" />
+        <iframe id="editor" src="about:blank"></iframe>
         <!-- <input type="button" id="btnPrint" onclick="print()" value="打印" /> -->
 <script type="text/javascript">
-    console.log(document.dir) 
-    document.dir = "rtl"
-    console.log(document.dir) 
+    //console.log(document.dir) 
+    //document.dir = "rtl"
+    //console.log(document.dir) 
+ 
+
+    // document.addEventListener('DOMContentLoaded', function (event) {
+    // document.write('<p>Hello World!</p>');
+    // });
+
+    // document.open();
+    // document.write('hello world');
+    // document.close();
+
+    // document.open();
+    // document.write('<p>hellow</p>')
+    // Document.close();
+    // var doc = document.implementation.createHTMLDocument('Title');
+    // var p = doc.createElement('p');
+    // p.innerHTML = 'hello world';
+    // doc.body.appendChild(p);
+
+    // var editor = document.getElementById('editor');
+    // editor.contentDocument.designMode = 'on';
+
+    // document.replaceChild(
+    // doc.documentElement,
+    // document.documentElement
+    // );
+
     
+
+
+    var interval = setInterval(function(){
+        console.log(document.readyState)
+        if(document.readyState === 'complete'){
+            clearInterval(interval)
+            console.log(document.readyState)
+        }
+
+    },100)
+
+    document.addEventListener('visibilitychange',function(){       
+         console.log(document.visibilityState)
+    })
+
+    window.onload = function(){
+        console.log(document.visibilityState)        
+    }
+
+    window.onbeforeunload = function(event) {
+        return event.returnValue = document.visibilityState;
+    };
+
+
+    window.onunload = function(){
+        return document.visibilityState
+    }
+ 
+    // document.addEventListener('visibilitychange',function(){
+    //     var isHidden = document.hidden;
+    //     if(isHidden){
+    //         console.log("当前页面不可见")
+    //     }
+    //     else{
+    //         console.log("在当前页面")
+    //     }
+    // })
 
     //console.log(document.referrer)
 
