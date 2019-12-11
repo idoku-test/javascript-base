@@ -1,175 +1,206 @@
 <!DOCTYPE html>
 <html>
-        <head>
-                <title>Title of the document</title> 
-                <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8">
-        </head>
-        
-<body >
-        <!-- <base href="http://www.idoku.cn"> -->
-        <div>1</div>
-        <p >一个段落</p>
-        <a href="http://www.baidu.com">baidu</a>
-        <a href="http://www.bing.com">bing</a>
-        <script type="text/javascript">
-            document.write("<p>hello world</p>")
-          </script>
-        <img id="pic1" src="1.png" width="60" height="80">
-        <img id="pic2" src="2.jpg" width="60" height="80">
 
-        <form id="f1" name="fn1"> 
-        <input type="text" id="input1" onclick="getact()" >
-        <input type="button" id="btnAct"  onclick="getact()"  value="当前焦点" >
+<head>
+    <title>Title of the document</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8">
+</head>
+
+<body>
+    <!-- <base href="http://www.idoku.cn"> -->
+    <div>1</div>
+    <p>一个段落</p>
+    <a href="http://www.baidu.com" class="foo">baidu</a>
+    <a href="http://www.bing.com" class="foo">bing</a>
+    <script type="text/javascript">
+        document.write("<p>hello world</p>")
+    </script>
+    <img id="pic1" src="1.png" width="60" height="80">
+    <img id="pic2" src="2.jpg" width="60" height="80">
+
+    <form id="f1" name="fn1">
+        <input name="input1" type="text" id="input1" onclick="getact()">
+        <input name="input1" type="button" id="btnAct" onclick="getact()" value="当前焦点">
 
         <input type="button" id="btnTop" onclick="gotop()" value="返回顶部" />
-        </form>
-        <input type="button" id="btnFull" onclick="fullscreen()" value="全屏" />
-        <iframe id="editor" src="about:blank"></iframe>
-        <!-- <input type="button" id="btnPrint" onclick="print()" value="打印" /> -->
-<script type="text/javascript">
-    //console.log(document.dir) 
-    //document.dir = "rtl"
-    //console.log(document.dir) 
- 
+    </form>
+    <input type="button" id="btnFull" onclick="fullscreen()" value="全屏" />
+    <iframe id="editor" src="about:blank"></iframe>
+    <!-- <input type="button" id="btnPrint" onclick="print()" value="打印" /> -->
+    <script type="text/javascript">
 
-    // document.addEventListener('DOMContentLoaded', function (event) {
-    // document.write('<p>Hello World!</p>');
-    // });
+        var div = document.createElement('div');
+        var divContent = document.createTextNode('hello world');
+        div.appendChild(divContent)
+        div.appendChild(document.createTextNode('<span>Foo & bar</span>'));
+        document.body.appendChild(div);
+        console.log(div.innerHTML)
 
-    // document.open();
-    // document.write('hello world');
-    // document.close();
+        // var div = document.createElement('div');
+        // div.innerHTML = 'hello world';
+        // document.body.appendChild(div);
+        // var element = document.elementFromPoint(50, 50);
+        // console.log(element)
+        // var ele = document.getElementById('f1')
+        // console.log(ele);
+        // var eles = document.getElementsByName('input1')
+        // console.log(eles);
 
-    // document.open();
-    // document.write('<p>hellow</p>')
-    // Document.close();
-    // var doc = document.implementation.createHTMLDocument('Title');
-    // var p = doc.createElement('p');
-    // p.innerHTML = 'hello world';
-    // doc.body.appendChild(p);
+        // var els = document.getElementsByClassName('foo')
+        // console.log(els);
 
-    // var editor = document.getElementById('editor');
-    // editor.contentDocument.designMode = 'on';
+        // var a = document.getElementsByTagName('p') 
+        // console.log((a instanceof HTMLCollection))
+        // console.log(a)
+        // var all = document.getElementsByTagName('*')
+        // console.log(all);
 
-    // document.replaceChild(
-    // doc.documentElement,
-    // document.documentElement
-    // );
+        // var el1 = document.querySelector('img')
+        // console.log(el1)
+        // var el2 = document.querySelectorAll('input[onclick]')
+        // console.log(el2)
+        // var all = document.querySelectorAll('*')
+        // console.log(all);
+        //console.log(document.dir) 
+        //document.dir = "rtl"
+        //console.log(document.dir) 
 
-    
+
+        // document.addEventListener('DOMContentLoaded', function (event) {
+        // document.write('<p>Hello World!</p>');
+        // });
+
+        // document.open();
+        // document.write('hello world');
+        // document.close();
+
+        // document.open();
+        // document.write('<p>hellow</p>')
+        // Document.close();
+        // var doc = document.implementation.createHTMLDocument('Title');
+        // var p = doc.createElement('p');
+        // p.innerHTML = 'hello world';
+        // doc.body.appendChild(p);
+
+        // var editor = document.getElementById('editor');
+        // editor.contentDocument.designMode = 'on';
+
+        // document.replaceChild(
+        // doc.documentElement,
+        // document.documentElement
+        // );
 
 
-    var interval = setInterval(function(){
-        console.log(document.readyState)
-        if(document.readyState === 'complete'){
-            clearInterval(interval)
-            console.log(document.readyState)
+
+
+        // var interval = setInterval(function(){
+        //     console.log(document.readyState)
+        //     if(document.readyState === 'complete'){
+        //         clearInterval(interval)
+        //         console.log(document.readyState)
+        //     }
+
+        // },100)
+
+        // document.addEventListener('visibilitychange',function(){       
+        //      console.log(document.visibilityState)
+        // })
+
+        // window.onload = function(){
+        //     console.log(document.visibilityState)        
+        // }
+
+        // window.onbeforeunload = function(event) {
+        //     return event.returnValue = document.visibilityState;
+        // };
+
+
+        // window.onunload = function(){
+        //     return document.visibilityState
+        // }
+
+        // document.addEventListener('visibilitychange',function(){
+        //     var isHidden = document.hidden;
+        //     if(isHidden){
+        //         console.log("当前页面不可见")
+        //     }
+        //     else{
+        //         console.log("在当前页面")
+        //     }
+        // })
+
+        //console.log(document.referrer)
+
+        // console.log(document.title)
+        // document.title = "change title"
+        // console.log(document.title)
+        // console.log(document.baseURI)
+        // console.log(document.domain)
+
+        // console.log(document.lastModified) 
+        // var lastVisitedDate = Date.parse('11/19/2019 00:34:00')
+        // console.log(Date.parse('11/18/2019 00:34:00'))
+        // console.log(Date.parse(document.lastModified))    
+        // if(Date.parse(document.lastModified) > lastVisitedDate){
+        //     console.log('网页已经变更');
+        // }
+        // console.log(Object.prototype.toString.call(document.links))
+        // console.log(Object.prototype.toString.call(document.styleSheets))
+        // console.log(document.images.pic1)
+
+
+        // var scripts = document.scripts;
+        // for(var i = 0 ;i<scripts.length;i++){
+        //     console.log(scripts[i])
+        // }
+
+        // var imgList = document.images
+        // for(var i = 0;i<imgList.length;i++){
+        //     console.log(imgList[i]);
+        // }
+
+        // var forms = document.forms;
+        // for(var i = 0;i<forms.length;i++){
+        //     console.log(forms[i])
+        // }
+        // console.log(document.forms[0] === document.forms.f1)
+        // console.log(document.forms.f1 === document.forms.fn1)
+        // var links = document.links;
+        // for(var i = 0;i<links.length;i++){
+        //     console.log(links[i])
+        // }
+        // // console.log(document.defaultView === window)
+        // var docttype = document.doctype;
+        // console.log(docttype)
+        // console.log(docttype.name)
+
+        // console.log(document.documentElement)
+        // console.log(document.body)
+        // console.log(document.head)
+        function gotop() {
+            document.scrollingElement.scrollTop = 0;
         }
 
-    },100)
+        function getact() {
+            var input = document.getElementById("input1");
+            console.log(document.activeElement)
+        }
 
-    document.addEventListener('visibilitychange',function(){       
-         console.log(document.visibilityState)
-    })
-
-    window.onload = function(){
-        console.log(document.visibilityState)        
-    }
-
-    window.onbeforeunload = function(event) {
-        return event.returnValue = document.visibilityState;
-    };
-
-
-    window.onunload = function(){
-        return document.visibilityState
-    }
- 
-    // document.addEventListener('visibilitychange',function(){
-    //     var isHidden = document.hidden;
-    //     if(isHidden){
-    //         console.log("当前页面不可见")
-    //     }
-    //     else{
-    //         console.log("在当前页面")
-    //     }
-    // })
-
-    //console.log(document.referrer)
-
-    // console.log(document.title)
-    // document.title = "change title"
-    // console.log(document.title)
-    // console.log(document.baseURI)
-    // console.log(document.domain)
-
-    // console.log(document.lastModified) 
-    // var lastVisitedDate = Date.parse('11/19/2019 00:34:00')
-    // console.log(Date.parse('11/18/2019 00:34:00'))
-    // console.log(Date.parse(document.lastModified))    
-    // if(Date.parse(document.lastModified) > lastVisitedDate){
-    //     console.log('网页已经变更');
-    // }
-    // console.log(Object.prototype.toString.call(document.links))
-    // console.log(Object.prototype.toString.call(document.styleSheets))
-    // console.log(document.images.pic1)
-
-    
-    // var scripts = document.scripts;
-    // for(var i = 0 ;i<scripts.length;i++){
-    //     console.log(scripts[i])
-    // }
-
-    // var imgList = document.images
-    // for(var i = 0;i<imgList.length;i++){
-    //     console.log(imgList[i]);
-    // }
-
-    // var forms = document.forms;
-    // for(var i = 0;i<forms.length;i++){
-    //     console.log(forms[i])
-    // }
-    // console.log(document.forms[0] === document.forms.f1)
-    // console.log(document.forms.f1 === document.forms.fn1)
-    // var links = document.links;
-    // for(var i = 0;i<links.length;i++){
-    //     console.log(links[i])
-    // }
-    // // console.log(document.defaultView === window)
-    // var docttype = document.doctype;
-    // console.log(docttype)
-    // console.log(docttype.name)
-    
-    // console.log(document.documentElement)
-    // console.log(document.body)
-    // console.log(document.head)
-    function gotop(){
-        document.scrollingElement.scrollTop = 0;
-    }
-
-    function getact(){
-        var input = document.getElementById("input1");
-        console.log(document.activeElement)
-    }
-
-    function fullscreen(){
-        var el = document.documentElement
-        el.requestFullscreen();
-        setTimeout(()=>{
-            console.log(document.fullscreenElement)
-        },1000) 
-    }
+        function fullscreen() {
+            var el = document.documentElement
+            el.requestFullscreen();
+            setTimeout(() => {
+                console.log(document.fullscreenElement)
+            }, 1000)
+        }
 
     // function print(){
     //     console.log(document.fullscreenElement)
     // }
 
- 
-    
-</script>
+
+
+    </script>
 </body>
 
 </html>
-
-
-
