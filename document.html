@@ -28,14 +28,28 @@
     <iframe id="editor" src="about:blank"></iframe>
     <!-- <input type="button" id="btnPrint" onclick="print()" value="打印" /> -->
     <script type="text/javascript">
+       
+        var cmtNode = document.createComment("这是一个注释")
+        console.log(cmtNode);
+        document.body.appendChild(cmtNode);
 
-        var div = document.createElement('div');
-        var divContent = document.createTextNode('hello world');
-        div.appendChild(divContent)
-        div.appendChild(document.createTextNode('<span>Foo & bar</span>'));
-        document.body.appendChild(div);
-        console.log(div.innerHTML)
+        // var ele = document.createElement("div");
+        // ele.innerHTML = 'hello world';
+        // var att = document.createAttribute("name")
+        // att.value="newName"        
+        // ele.setAttributeNode(att);
+        // ele.setAttribute('id','div1');
+        // document.body.appendChild(ele);
+        // console.log(ele);
 
+        // var div = document.createElement('div');
+        // var divContent = document.createTextNode('hello world');
+        // div.appendChild(divContent)
+        // div.appendChild(document.createTextNode('<span>Foo & bar</span>'));
+        // document.body.appendChild(div);
+        // console.log(div.innerHTML)
+
+        
         // var div = document.createElement('div');
         // div.innerHTML = 'hello world';
         // document.body.appendChild(div);
