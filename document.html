@@ -8,8 +8,9 @@
 
 <body>
     <!-- <base href="http://www.idoku.cn"> -->
+    <ul id="ul"></ul>
     <div>1</div>
-    <p>一个段落</p>
+    <p id="p">一个段落</p>
     <a href="http://www.baidu.com" class="foo">baidu</a>
     <a href="http://www.bing.com" class="foo">bing</a>
     <script type="text/javascript">
@@ -25,16 +26,61 @@
         <input type="button" id="btnTop" onclick="gotop()" value="返回顶部" />
     </form>
     <input type="button" id="btnFull" onclick="fullscreen()" value="全屏" />
-    <iframe id="editor" src="about:blank"></iframe>
+    <iframe id="iframe" src="document_frame.html">
+        
+    </iframe>
+     <div id="d4">d4</div>
     <!-- <input type="button" id="btnPrint" onclick="print()" value="打印" /> -->
     <script type="text/javascript">
        
-        var cmtNode = document.createComment("这是一个注释")
-        console.log(cmtNode);
-        document.body.appendChild(cmtNode);
+        var iframe = document.getElementsByTagName('iframe')[0];        
+        iframe.onload = function(){
 
-        // var ele = document.createElement("div");
-        // ele.innerHTML = 'hello world';
+             var iframeDocument = iframe.contentWindow.document;
+            console.log(iframeDocument.body)
+            var oldNode = iframeDocument.getElementById('p');
+            var newNode = document.adoptNode(oldNode);
+            document.getElementById('d4').appendChild(newNode)
+        }
+       
+        
+        // var focused = document.hasFocus();
+        // console.log(focused);
+        
+        // function listener(e) {
+        //     console.log(e.type)
+        // }
+
+        // var event = new Event('click');
+        // document.addEventListener('click', listener,false)       
+        // document.dispatchEvent(event);
+        // document.removeEventListener('click',listener,false)
+        // document.dispatchEvent(event);
+        
+        // var event = document.createEvent('Event');
+        // //event.initEvent('click',true,true);
+        // var p = document.getElementById('p')
+        // p.addEventListener('click',function(e){
+        //     console.log(e.type);
+        // },false);
+
+
+        // var docFrag = document.createDocumentFragment();
+        // [1,2,3,4].forEach(e=>{
+        //     var li = document.createElement('li')
+        //     li.textContent = e;
+        //     docFrag.appendChild(li)
+        // })
+
+        // var ele = document.getElementById('ul')
+        // ele.appendChild(docFrag);
+
+        // var cmtNode = document.createComment("这是一个注释")
+        // console.log(cmtNode);
+        // document.body.appendChild(cmtNode);
+
+        // // var ele = document.createElement("div");
+        // // ele.innerHTML = 'hello world';
         // var att = document.createAttribute("name")
         // att.value="newName"        
         // ele.setAttributeNode(att);
