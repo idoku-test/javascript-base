@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       
+</head>
+
+<body>
+        <div id="div1" class="one two three">
+                <p id="p2" name="input2" type = "text" contenteditable="true"  >可以编辑</p>
+                <p id="p3" name="input2" type = "text" contenteditable="false"  >不可以编辑</p>
+                </div>
+<p id="p1">一个段落</p>
+<span id="s1" title="title字块">一个文字块</span>
+<span id="s2" title="title字块" >第二个文字块</span>
+
+<input id="btn2" type="button"  value="隐藏文字">
+<input name="input1" tabindex="1" draggable="true" type="text" id="input1" onfocus="focusFun(this)" onclick="getact()">
+<input id="btn" type="button" tabindex="2" accesskey="f" id="btnAct" onfocus="focusFun(this)" onclick="getact()" value="当前焦点">
+
+<script type="text/javascript">
+
+var div = document.getElementById("div1")
+div.setAttribute('data-columns',3)
+div.setAttribute('data-indexNumber',1)
+div.setAttribute('data-parent','cars')
+// div.dataset.columns = '3'
+// div.dataset.indexNumber = '1'
+// div.dataset.parent = 'cars'
+var attrs = div.attributes;
+for (var i = attrs.length - 1; i >= 0; i--) {
+  console.log(attrs[i].name + '->' + attrs[i].value);
+}
+
+
+// div.className +=" bold"
+// console.log(div.className)
+// div.className = div.className.replace(/bold/,'')
+// console.log(div.className)
+// div.classList.add('bold')
+// console.log(div.classList)
+// div.classList.remove('bold')
+// console.log(div.classList)
+
+// var p = document.querySelector('p');
+// var attrs = p.attributes;
+
+// for (var i = attrs.length - 1; i >= 0; i--) {
+//   console.log(attrs[i].name + '->' + attrs[i].value);
+// }
+
+//   var s2 = document.getElementById('s2')
+//   console.log(s2.hidden)
+ 
+//    var btn2 = document.getElementById("btn2")
+//    btn2.addEventListener('click',function(){
+//         s2.hidden = !s2.hidden
+//         console.log(s2.hidden)
+//    },false)
+
+
+        // var s1 = document.getElementById('s1')
+        // console.log(s1.title)
+
+        //var input = document.getElementById('input1')        
+        //console.log(input.draggable);
+        
+        //console.log(document.documentElement.lang)
+
+        
+        // var btn = document.getElementById('btn')
+        // console.log(btn.accessKey);
+        // document.dir = "ltr"
+        // console.log(document.dir)
+        // var s = document.querySelector('span');        
+        // console.log(s.dir)
+        // var p = document.querySelector('p');
+        function focusFun(obj){
+            debugger
+            console.log(obj.tabIndex)
+        }
+
+        function getact() {
+            var input = document.getElementById("input1");
+            console.log(document.activeElement)
+        }
+        //console.log(p.nodeName)
+        //console.log(p.nodeType)
+        //console.log(p.id)
+        //console.log(p.tagName)
+
+</script>
+</body>
+
+</html>
+
+
+

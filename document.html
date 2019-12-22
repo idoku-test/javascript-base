@@ -22,31 +22,65 @@
     <form id="f1" name="fn1">
         <input name="input1" type="text" id="input1" onclick="getact()">
         <input name="input1" type="button" id="btnAct" onclick="getact()" value="当前焦点">
-
+        <b>adb</b>
         <input type="button" id="btnTop" onclick="gotop()" value="返回顶部" />
     </form>
     <input type="button" id="btnFull" onclick="fullscreen()" value="全屏" />
-    <iframe id="iframe" src="document_frame.html">
-        
-    </iframe>
-     <div id="d4">d4</div>
+    <iframe id="iframe" src="document_frame.html"></iframe>
+    <div id="d4">d4</div>
     <!-- <input type="button" id="btnPrint" onclick="print()" value="打印" /> -->
     <script type="text/javascript">
-       
-        var iframe = document.getElementsByTagName('iframe')[0];        
-        iframe.onload = function(){
 
-             var iframeDocument = iframe.contentWindow.document;
-            console.log(iframeDocument.body)
-            var oldNode = iframeDocument.getElementById('p');
-            var newNode = document.adoptNode(oldNode);
-            document.getElementById('d4').appendChild(newNode)
-        }
-       
+        // var url = window.prompt('请输入网址')
+        // if(url){
+        //     document.execCommand('createlink',true,url)
+        // }
         
+
+        // var treeWalker = document.createTreeWalker(
+        //     document.body,
+        //     NodeFilter.SHOW_ELEMENT
+        // );
+
+        // var nodeList = [];
+
+        // while (treeWalker.nextNode()) {
+        //     nodeList.push(treeWalker.currentNode);
+        // }
+        // console.log(nodeList);
+        // var nodeIterator = document.createNodeIterator(
+        //     document.body,
+        //     NodeFilter.SHOW_ELEMENT
+        // )
+        // var pars = [];
+        // var currentNode;
+        // while(currentNode = nodeIterator.nextNode()){
+        //     pars.push(currentNode)
+        // }
+        // console.log(pars)
+
+        // var iframe = document.getElementsByTagName('iframe')[0];
+        // iframe.onload = function () {
+        //     var iframeDocument = iframe.contentWindow.document;
+        //     var oldNode = iframeDocument.getElementById('p');
+        //     var newNode = document.importNode(oldNode, true);
+        //     document.getElementById('d4').appendChild(newNode)
+        // }
+
+        // var iframe = document.getElementsByTagName('iframe')[0];        
+        // iframe.onload = function(){
+
+        //      var iframeDocument = iframe.contentWindow.document;
+        //     console.log(iframeDocument.body)
+        //     var oldNode = iframeDocument.getElementById('p');
+        //     var newNode = document.adoptNode(oldNode);
+        //     document.getElementById('d4').appendChild(newNode)
+        // }
+
+
         // var focused = document.hasFocus();
         // console.log(focused);
-        
+
         // function listener(e) {
         //     console.log(e.type)
         // }
@@ -56,7 +90,7 @@
         // document.dispatchEvent(event);
         // document.removeEventListener('click',listener,false)
         // document.dispatchEvent(event);
-        
+
         // var event = document.createEvent('Event');
         // //event.initEvent('click',true,true);
         // var p = document.getElementById('p')
@@ -95,7 +129,7 @@
         // document.body.appendChild(div);
         // console.log(div.innerHTML)
 
-        
+
         // var div = document.createElement('div');
         // div.innerHTML = 'hello world';
         // document.body.appendChild(div);
